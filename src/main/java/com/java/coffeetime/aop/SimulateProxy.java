@@ -25,10 +25,10 @@ public class SimulateProxy extends Proxy implements Fight {
     public void shot() {
         try {
             // 代理的方法
-            Method pMetod = Fight.class.getMethod("shot");
+            Method pMethod = Fight.class.getMethod("shot");
 
             //调用增强处理器
-            super.h.invoke(this, pMetod, null);   
+            super.h.invoke(this, pMethod, null);   
         } catch (Throwable e) {
             e.printStackTrace();
         }
@@ -41,10 +41,10 @@ public class SimulateProxy extends Proxy implements Fight {
     public void bomb() {
         try {
             // 代理的方法
-            Method pMetod = Fight.class.getMethod("bomb");
+            Method pMethod = Fight.class.getMethod("bomb");
 
             //调用增强处理器
-            super.h.invoke(this, pMetod, null);   
+            super.h.invoke(this, pMethod, null);   
         } catch (Throwable e) {
             e.printStackTrace();
         }

@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
+import java.util.Objects;
 
 public class JdkProxy {
     
@@ -22,6 +23,9 @@ public class JdkProxy {
      */
     public static void main(String[] args) throws InterruptedException {
         
+        //方便生成代理文件
+        System.setProperty("jdk.proxy.ProxyGenerator.saveGeneratedFiles", "true");
+
         // jdkProxy
         jdkProxyTest();
         
@@ -57,7 +61,8 @@ public class JdkProxy {
         
         //打印下类路径，方便使用 arthas 进行反张译
         LOGGER.debug("proxy<w_k_l_Fight> class {}", w_k_l_Fight.getClass());
-    
+        LOGGER.debug("w_k_l_Fight equals target ? {}", Objects.equals(w_k_l_Fight, target));
+        LOGGER.debug("w_k_l_Fight == target ? {}", w_k_l_Fight == target);
         //代理人调用方法
         w_k_l_Fight.shot();
         w_k_l_Fight.bomb();

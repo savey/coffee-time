@@ -1,4 +1,4 @@
-package com.java.coffeetime.aop;
+package com.java.coffeetime.proxy;
 
 
 import org.slf4j.Logger;
@@ -67,7 +67,7 @@ public class JdkProxy {
         w_k_l_Fight.shot();
         w_k_l_Fight.bomb();
         
-    }
+    }  
 
 
     /**

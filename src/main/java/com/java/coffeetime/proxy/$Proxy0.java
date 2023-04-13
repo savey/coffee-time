@@ -1,4 +1,4 @@
-package com.java.coffeetime.aop;
+package com.java.coffeetime.proxy;
 
 
 import java.lang.invoke.MethodHandles;
@@ -33,8 +33,8 @@ public final class $Proxy0
             m0 = Class.forName("java.lang.Object").getMethod("hashCode", new Class[0]);
             m1 = Class.forName("java.lang.Object").getMethod("equals", Class.forName("java.lang.Object"));
             m2 = Class.forName("java.lang.Object").getMethod("toString", new Class[0]);
-            m3 = Class.forName("com.java.coffeetime.aop.Fight").getMethod("shot", new Class[0]);
-            m4 = Class.forName("com.java.coffeetime.aop.Fight").getMethod("bomb", new Class[0]);
+            m3 = Class.forName("com.java.coffeetime.proxy.Fight").getMethod("shot", new Class[0]);
+            m4 = Class.forName("com.java.coffeetime.proxy.Fight").getMethod("bomb", new Class[0]);
         }
         catch (NoSuchMethodException noSuchMethodException) {
             throw new NoSuchMethodError(noSuchMethodException.getMessage());

@@ -1,4 +1,4 @@
-package com.java.coffeetime.aop;
+package com.java.coffeetime.proxy;
 
 /**
  * @author Savey

@@ -2,11 +2,13 @@ package com.java.coffeetime.proxy;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 /**
  * @author Savey
  * @date 2023/4/12/16:05
  */
+@Component
 public class BeautifulCountryTarget implements Fight {
 
 

@@ -33,7 +33,6 @@ public class AopTest {
             LOGGER.debug("ProductOrder paying");
         }
         
-        @PointCutSign()
         @Override
         public void refund() {
             LOGGER.debug("ProductOrder refunding");
@@ -41,10 +40,10 @@ public class AopTest {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         //创建 pointcut
         Pointcut pointcut = AnnotationMatchingPointcut.forMethodAnnotation(PointCutSign.class);
-
+        
         
         //创建通知 advice
         Advice advice = (MethodInterceptor) invocation -> {
@@ -67,7 +66,14 @@ public class AopTest {
         ProxyFactory factory = new ProxyFactory();
         factory.setTarget(target);
         factory.addAdvisor(advisor);
+        factory.setProxyTargetClass(false);
+        factory.setInterfaces(OrderService.class);
         OrderService proxy = (OrderService) factory.getProxy();
         proxy.pay();
+        proxy.refund();
+
+        LOGGER.debug("proxy class {}", proxy.getClass());
+        
+        
     }
 }
